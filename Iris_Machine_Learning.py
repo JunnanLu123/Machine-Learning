@@ -63,7 +63,7 @@ class IrisLearningMachine:
     def model_training(self):
         """Parsing the CSV file into suitable format 
         with batch size at 32."""
-        dataset = self.makeDataFromCSV("C:/Users/Byzantin/source/repos/Data1/Data1/iris_training.csv", 32)
+        dataset = self.makeDataFromCSV("C:/Users/JunnanLu/iris_training.csv", 32)
 
         """Keep result for plotting."""
         loss_value_list=[]
@@ -132,7 +132,7 @@ class IrisLearningMachine:
            Dataset is downloaded and store in local machine.
            Parsing the test data.
         """
-        dataset = self.makeDataFromCSV("C:/Users/Byzantin/source/repos/Data1/Data1/iris_test.csv", 100)
+        dataset = self.makeDataFromCSV("C:/Users/JunnanLu/iris_test.csv", 100)
 
         # Tracking model performace
         accuracy = tf.keras.metrics.Accuracy()
@@ -157,7 +157,7 @@ class IrisLearningMachine:
            we take 10 samples from the features data
            letting our model to predict.
         """
-        predict_data = self.makeDataFromCSV("C:/Users/Byzantin/source/repos/Data1/Data1/iris1.csv",10)
+        predict_data = self.makeDataFromCSV("C:/Users/JunnanLu/iris1.csv",10)
         features, labels = self.unpackData(predict_data)
 
         # List of three class names.
