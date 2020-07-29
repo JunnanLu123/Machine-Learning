@@ -71,9 +71,12 @@ class IrisLearningMachine:
 
         """Creating a linear stack of layers with sequential model."""
         model = tf.keras.Sequential()
-        model.add(tf.keras.layers.Dense(10, activation=tf.nn.relu, input_shape=(4,))) # The first dense hidden layer with 10 nodes.
-        model.add(tf.keras.layers.Dense(10, activation=tf.nn.relu)) # The second dense hidden layer with 10 nodes
-        model.add(tf.keras.layers.Dense(3)) # The final output layer with 3 nodes denoting three flower classes.
+        # The first dense hidden layer with 10 nodes.
+        model.add(tf.keras.layers.Dense(10, activation=tf.nn.relu, input_shape=(4,))) 
+        # The second dense hidden layer with 10 nodes
+        model.add(tf.keras.layers.Dense(10, activation=tf.nn.relu)) 
+        # The final output layer with 3 nodes denoting three flower classes
+        model.add(tf.keras.layers.Dense(3)) 
 
         
         loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True) # Calculate the loss and return average loss across the examples.
