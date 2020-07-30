@@ -27,8 +27,9 @@ class IrisLearningMachine:
         self.features=[]
         self.label=[]
 
-    """Visualize the flower data from the dataset batch.
-       The batch size is 32 rows of feature and label pairs.
+    """ Helper function for visualizing the flower data 
+        from the dataset batch.The batch size is 32 rows 
+        of feature and label pairs.
     """
     def displayFig(self):
         plt.scatter(self.features['petal_length'], self.features['petal_width'], c=self.label, cmap='viridis')
@@ -36,7 +37,9 @@ class IrisLearningMachine:
         plt.ylabel('petal_width')
         plt.show()
 
-    """Unpacked the dataset to feature and label pairs."""
+    """ Helper function to Unpack the dataset to feature 
+        and label pairs.
+    """
     def unpackData(self, dataset):
         features, labels = next(iter(dataset))
         return features, labels
