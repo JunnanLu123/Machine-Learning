@@ -80,10 +80,10 @@ class IrisLearningMachine:
         model.add(tf.keras.layers.Dense(10, activation=tf.nn.relu)) 
         # The final output layer with 3 nodes denoting three flower classes
         model.add(tf.keras.layers.Dense(3)) 
-
-        
-        loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True) # Calculate the loss and return average loss across the examples.
-        train = tf.keras.metrics.Mean(name='mean') # Model metric
+        # Calculate the loss and return average loss across the examples.
+        loss_object = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True) 
+        # Model metric
+        train = tf.keras.metrics.Mean(name='mean') 
         # Calculate the gradients to optimize the model
         optimizer = tf.keras.optimizers.SGD(learning_rate=0.01) 
 
@@ -132,7 +132,6 @@ class IrisLearningMachine:
         axes[1].plot(model_accuracy_list)
         plt.show()
        
-
         """Model evaluation using test data
            Using single epoch to test the model.
            Dataset is downloaded and store in local machine.
